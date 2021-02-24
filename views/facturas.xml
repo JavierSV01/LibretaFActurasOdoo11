@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="libretafacturas_facturas_action" name="facturas"
+                     res_model="libretafacturas.facturas" />
+
+
+        <record id="libretafacturas_facturas_tree" model="ir.ui.view">
+            <field name="name">Lista facturas</field>
+            <field name="model">libretafacturas.facturas</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="cod" />
+                    <field name="productos" />
+                </tree>
+            </field>
+        </record>
+
+
+
+        <record id="prue01_dato_view_search" model="ir.ui.view">
+            <field name="name">Busqueda datos</field>
+            <field name="model">libretafacturas.facturas</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="cod" />
+                    <field name="productos" />
+                </search>
+            </field>
+        </record>
+        <menuitem name="Libreta facturas" id="menu_libretafacturas" sequence="10" />
+        <menuitem name="Facturas" id="menu_facturas" parent="menu_libretafacturas" sequence="10"/>
+        <menuitem name="Lista facturas" id="menu_lista_facturas" action="libretafacturas_facturas_action" parent="menu_facturas" sequence="10"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="libretafacturas_cliente_action" name="clientes"
+                     res_model="libretafacturas.cliente" />
+
+
+        <record id="libretafacturas_cliente_tree" model="ir.ui.view">
+            <field name="name">Lista </field>
+            <field name="model">libretafacturas.cliente</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="cod" />
+                    <field name="nombre" />
+                    <field name="edad" />
+                    <field name="facturas" />
+                </tree>
+            </field>
+        </record>
+
+
+
+        <record id="libretafacturas_cliente_view_search" model="ir.ui.view">
+            <field name="name">Busqueda datos</field>
+            <field name="model">libretafacturas.cliente</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="cod" />
+                    <field name="nombre" />
+                    <field name="edad" />
+                    <field name="facturas" />
+                </search>
+            </field>
+        </record>
+        <menuitem name="Libreta facturas" id="menu_libretafacturas" sequence="10" />
+        <menuitem name="Cientes" id="menu_cliente" parent="menu_libretafacturas" sequence="10"/>
+        <menuitem name="Lista clientes" id="menu_lista_clientes" action="libretafacturas_cliente_action" parent="menu_cliente" sequence="10"/>
+
+    </data>
+</odoo>
